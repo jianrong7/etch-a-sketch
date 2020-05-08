@@ -1,0 +1,43 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #07617d;
+}
+h2 {
+    margin-top: 2%;
+    font-size: 28px;
+    text-align: center;
+    color: rgb(236, 236, 236);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h4 {
+    text-align: center;
+    font-size: medium;
+    color: rgb(218, 218, 218);
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+#container {
+  background-color: #ffffff;
+  display: grid;
+  align-self: center;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  height: 960px;
+  width: 960px;
+  margin: auto;
+  border: 8px solid rgb(144, 144, 144);
+}
+.grid-item {
+  padding: 1em;
+}
+.colors {
+    margin-bottom: 30px;
+    text-align: center;
+}
