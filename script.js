@@ -3,17 +3,24 @@ const blackButton = document.getElementById("black");
 const colorButton = document.getElementById("color");
 const grayButton = document.getElementById("gray");
 const resetButton = document.getElementById("size");
+const eraserButton = document.getElementById("eraser");
 const gridItems = document.querySelectorAll(".grid-item");
 
 function makeRows(rows, cols) {
+  //const grid = gridSize.value ** 2;
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
-    let cell = document.createElement("div");
-    cell.classList.add("grid-item")
-    container.appendChild(cell)
-  };
-};
+  for (let i = 0; i < (rows * cols); i++) {
+      let cell = document.createElement("div");
+      cell.classList.add('grid-item')
+      let squareHeightAndWidth = 480 / rows;
+
+      cell.style.height = squareHeightAndWidth + 'px'
+      cell.style.width = squareHeightAndWidth + 'px'
+
+      container.appendChild(cell);
+  }
+}
 
 function blackColor() {
   const gridItems = document.querySelectorAll(".grid-item");
@@ -42,6 +49,15 @@ function grayColor() {
           gridItem.style.backgroundColor = "black";
       });
   });
+}
+
+function eraser() {
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener("mouseover", function(e) {
+      gridItem.style.backgroundColor = "white";
+    })
+  })
 }
 
 function resize(){
@@ -89,6 +105,10 @@ grayButton.addEventListener("click", function(){
   container.innerHTML = "";
   makeRows(16,16);
   grayColor();
+});
+
+eraserButton.addEventListener("click", function(){
+  eraser();
 });
 
 resetButton.addEventListener("click", function(){
