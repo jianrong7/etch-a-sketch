@@ -4,7 +4,7 @@
 
 Heavily inspired by [Frankie](https://frankie-njie.github.io/Etch-a-sketch/)
 
-[Sketching fun](https://kynki7.github.io/etch-a-sketch/) using HTML, CSS and Javascript.
+[Sketching fun](https://jianrong7.github.io/etch-a-sketch/) using HTML, CSS and Javascript.
 
 ## What I learnt
 - Learnt to crid a grid using javascript

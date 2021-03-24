@@ -89,32 +89,26 @@ function reset(e) {
   makeRows(16,16);
 }
 
-blackButton.addEventListener("click", function(){
-  container.innerHTML = "";
-  makeRows(16,16);
-  blackColor();
-});
+const btns = document.querySelectorAll('.btn')
 
-colorButton.addEventListener("click", function(){
-  container.innerHTML = "";
-  makeRows(16,16);
-  color();
-});
-
-grayButton.addEventListener("click", function(){
-  container.innerHTML = "";
-  makeRows(16,16);
-  grayColor();
-});
-
-eraserButton.addEventListener("click", function(){
-  eraser();
-});
-
-resetButton.addEventListener("click", function(){
-  container.innerHTML = "";
-  resize();
-});
+btns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    container.innerHTML = ''
+    makeRows(16,16)
+    const identity = e.target.id
+    if (identity == 'black') {
+      blackColor()
+    } else if (identity == 'color') {
+      color()
+    } else if (identity == 'gray') {
+      grayColor()
+    } else if (identity == 'eraser') {
+      eraser()
+    } else {
+      resize()
+    }
+  })
+})
 
 makeRows(16, 16);
 blackColor();
