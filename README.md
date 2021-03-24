@@ -14,5 +14,4 @@ Heavily inspired by [Frankie](https://frankie-njie.github.io/Etch-a-sketch/)
 
 
 ## What I need to work on
-- Still not familiar with the concept of creating elements from javascript
 - May try again in the future using Flexbox
